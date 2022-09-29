@@ -31,7 +31,7 @@ workaround_ansible_issue_8743: yes
 #config_strategy: "COPY_ALWAYS"
 
 # Valid options are ['centos', 'debian', 'rhel', 'ubuntu']
-#kolla_base_distro: "centos"
+kolla_base_distro: "ubuntu"
 
 # Do not override this unless you know what you are doing.
 #openstack_release: "master"
@@ -88,8 +88,8 @@ workaround_ansible_issue_8743: yes
 # Docker client timeout in seconds.
 #docker_client_timeout: 120
 
-#docker_configure_for_zun: "no"
-#containerd_configure_for_zun: "no"
+docker_configure_for_zun: "yes"
+containerd_configure_for_zun: "yes"
 #containerd_grpc_gid: 42463
 
 ###################
@@ -320,7 +320,7 @@ workaround_ansible_issue_8743: yes
 #enable_freezer: "no"
 #enable_gnocchi: "no"
 #enable_gnocchi_statsd: "no"
-#enable_grafana: "{{ enable_monasca | bool }}"
+enable_grafana: "{{ enable_monasca | bool }}"
 #enable_grafana_external: "{{ enable_grafana | bool }}"
 #enable_heat: "{{ enable_openstack_core | bool }}"
 #enable_horizon: "{{ enable_openstack_core | bool }}"
@@ -334,7 +334,7 @@ workaround_ansible_issue_8743: yes
 #enable_horizon_manila: "{{ enable_manila | bool }}"
 #enable_horizon_masakari: "{{ enable_masakari | bool }}"
 #enable_horizon_mistral: "{{ enable_mistral | bool }}"
-#enable_horizon_monasca: "{{ enable_monasca | bool }}"
+enable_horizon_monasca: "{{ enable_monasca | bool }}"
 #enable_horizon_murano: "{{ enable_murano | bool }}"
 #enable_horizon_neutron_vpnaas: "{{ enable_neutron_vpnaas | bool }}"
 #enable_horizon_octavia: "{{ enable_octavia | bool }}"
@@ -345,7 +345,7 @@ workaround_ansible_issue_8743: yes
 #enable_horizon_trove: "{{ enable_trove | bool }}"
 #enable_horizon_vitrage: "{{ enable_vitrage | bool }}"
 #enable_horizon_watcher: "{{ enable_watcher | bool }}"
-#enable_horizon_zun: "{{ enable_zun | bool }}"
+enable_horizon_zun: "{{ enable_zun | bool }}"
 #enable_influxdb: "{{ enable_monasca | bool or (enable_cloudkitty | bool and cloudkitty_storage_backend == 'influxdb') }}"
 #enable_ironic: "no"
 #enable_ironic_neutron_agent: "{{ enable_neutron | bool and enable_ironic | bool }}"
@@ -364,7 +364,7 @@ workaround_ansible_issue_8743: yes
 #enable_mariabackup: "no"
 #enable_masakari: "no"
 #enable_mistral: "no"
-#enable_monasca: "no"
+enable_monasca: "yes"
 #enable_multipathd: "no"
 #enable_murano: "no"
 #enable_neutron_vpnaas: "no"
@@ -388,8 +388,8 @@ workaround_ansible_issue_8743: yes
 #enable_ovn: "{{ enable_neutron | bool and neutron_plugin_agent == 'ovn' }}"
 #enable_ovs_dpdk: "no"
 #enable_osprofiler: "no"
-#enable_placement: "{{ enable_nova | bool or enable_zun | bool }}"
-#enable_prometheus: "no"
+enable_placement: "{{ enable_nova | bool or enable_zun | bool }}"
+enable_prometheus: "yes"
 #enable_proxysql: "no"
 #enable_redis: "no"
 #enable_sahara: "no"
